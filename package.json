@@ -1,0 +1,22 @@
+{
+  "name": "restro-bot",
+  "version": "1.0.0",
+  "description": "A Restaurant Reservation Bot",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "dev": "npx nodemon index",
+    "push" : "git add . && git commit -m 'codeUpdated' && git push"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "botbuilder": "^4.14.1",
+    "botbuilder-ai": "^4.14.1",
+    "botbuilder-dialogs": "^4.14.1",
+    "restify": "^8.6.0"
+  },
+  "devDependencies": {
+    "dotenv": "^10.0.0"
+  }
+}
