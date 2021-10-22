@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node index",
     "dev": "npx nodemon index",
-    "push" : "git add . && git commit -m 'codeUpdated' && git push"
+    "push" : "git add . && git commit -m 'codeUpdated' && git push -u origin main"
   },
   "author": "",
   "license": "ISC",
