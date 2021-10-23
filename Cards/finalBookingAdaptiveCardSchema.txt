@@ -1,0 +1,218 @@
+{
+    "type": "AdaptiveCard",
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "version": "1.3",
+    "body": [
+        {
+            "type": "ColumnSet",
+            "columns": [
+                {
+                    "type": "Column",
+                    "width": "stretch",
+                    "items": [
+                        {
+                            "type": "Image",
+                            "url": "https://celebaltech.com/assets/img/celebal.webp",
+                            "size": "Medium"
+                        }
+                    ]
+                },
+                {
+                    "type": "Column",
+                    "width": "stretch",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "wrap": true,
+                            "text": "Table Booking Reciept",
+                            "size": "Medium",
+                            "weight": "Bolder",
+                            "color": "Accent"
+                        }
+                    ]
+                }
+            ],
+            "horizontalAlignment": "Center"
+        },
+        {
+            "type": "Container",
+            "items": [
+                {
+                    "type": "Container",
+                    "items": [
+                        {
+                            "type": "Image",
+                            "separator": true,
+                            "horizontalAlignment": "Center",
+                            "spacing": "Large",
+                            "url": "https://us.123rf.com/450wm/siraanamwong/siraanamwong2009/siraanamwong200900036/155414683-thanksgiving-day-invitation-with-interior-dining-room-vector-illustration.jpg?ver=6",
+                            "height": "182px",
+                            "width": "344px"
+                        }
+                    ]
+                },
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Booking ID",
+                                    "wrap": true,
+                                    "horizontalAlignment": "Center",
+                                    "size": "Medium",
+                                    "weight": "Bolder",
+                                    "color": "Dark"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "ID Here",
+                                    "wrap": true,
+                                    "size": "Medium",
+                                    "weight": "Lighter"
+                                }
+                            ]
+                        }
+                    ],
+                    "horizontalAlignment": "Center",
+                    "separator": true,
+                    "spacing": "Large"
+                },
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Number of Person",
+                                    "wrap": true,
+                                    "horizontalAlignment": "Center",
+                                    "size": "Medium",
+                                    "weight": "Bolder",
+                                    "color": "Dark"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Total Person",
+                                    "wrap": true,
+                                    "size": "Medium",
+                                    "weight": "Lighter"
+                                }
+                            ]
+                        }
+                    ],
+                    "horizontalAlignment": "Center"
+                },
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Booking Date",
+                                    "wrap": true,
+                                    "horizontalAlignment": "Center",
+                                    "size": "Medium",
+                                    "weight": "Bolder",
+                                    "color": "Dark"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Date Here",
+                                    "wrap": true,
+                                    "size": "Medium",
+                                    "weight": "Lighter"
+                                }
+                            ]
+                        }
+                    ],
+                    "horizontalAlignment": "Center"
+                }
+            ],
+            "spacing": "Medium"
+        },
+        {
+            "type": "Container",
+            "separator": true,
+            "spacing": "Medium",
+            "items": [
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Table Number",
+                                    "wrap": true,
+                                    "horizontalAlignment": "Center",
+                                    "size": "Medium",
+                                    "weight": "Bolder",
+                                    "color": "Dark"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Table Number Here",
+                                    "wrap": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "items": [
+                {
+                    "type": "TextBlock",
+                    "wrap": true,
+                    "text": "The Table is successfully booked for you. Regarding any query feel free to connect on us on our mail id foodstar@gmail.com or connect with us below in our official website",
+                    "size": "Small",
+                    "weight": "Bolder",
+                    "spacing": "Medium",
+                    "separator": true
+                }
+            ],
+            "spacing": "Medium",
+            "separator": true,
+            "verticalContentAlignment": "Center",
+            "style": "warning"
+        }
+    ]
+}

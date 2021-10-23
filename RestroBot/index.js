@@ -1,4 +1,5 @@
 const {ActivityHandler,CardFactory} = require('botbuilder');
+const {IntroCard} = require('../Cards');
 
 class RestroBot extends ActivityHandler{
     constructor(conversationState,rootDialog){
@@ -16,7 +17,11 @@ class RestroBot extends ActivityHandler{
             for(let cnt = 0; cnt < membersAdded.length; cnt ++){
                 if(membersAdded[cnt].id !== context.activity.recipient.id){
                     await context.sendActivity(`Welcome ${membersAdded[cnt].name}`);
-                    await this.sendServicesOptions(context);
+                    await context.sendActivity({
+                        attachments : [
+                            CardFactory.adaptiveCard(IntroCard())
+                        ]
+                    })
                 }
             }
             await next();

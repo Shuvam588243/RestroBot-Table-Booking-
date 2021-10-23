@@ -1,15 +1,22 @@
 const {
     ComponentDialog,
     WaterfallDialog,
-    TextPrompt
+    TextPrompt,
+    ChoicePrompt,
+    ChoiceFactory,
+    ConfirmPrompt
 } = require('botbuilder-dialogs');
+const {nanoid} = require('nanoid');
 const {CardFactory} = require('botbuilder');
+
 
 const bookTable = 'bookTable'
 const bookTableWaterafall1 = 'bookTableWaterafall1'
 const TextPromptDialog = 'TextPromptDialog'
+const ChoicePromptDialog = 'ChoicePromptDialog'
+const ConfirmPromptDialog = 'ConfirmPromptDialog'
 
-const {bookTableCard} = require('../Cards');
+const {bookTableCard,confirmationCard,finalBookingCard} = require('../Cards');
 
 let dialogState;
 
@@ -21,12 +28,15 @@ class BookTable extends ComponentDialog{
         this.bookTableData = this.convesationState.createProperty('BOOK_A_TABLE');
 
         this.addDialog(new TextPrompt(TextPromptDialog));
+        this.addDialog(new ChoicePrompt(ChoicePromptDialog));
+        this.addDialog(new ConfirmPrompt(ConfirmPromptDialog));
 
         this.addDialog(new WaterfallDialog(bookTableWaterafall1,[
             this.preprocessEntities.bind(this),
             this.getNumberOfPerson.bind(this),
             this.getDateOfBooking.bind(this),
-            this.confirmTableBooking.bind(this)
+            this.showConfirmationCard.bind(this),
+            this.finalBooking.bind(this)
         ]))
 
         this.initialDialogId = bookTableWaterafall1;
@@ -94,7 +104,6 @@ class BookTable extends ComponentDialog{
         dialogState = await this.bookTableData.get(stepContext.context,{});
         if(stepContext.values.Entities.numberEntity){ 
             dialogState.numberOfPeople = stepContext.values.Entities.numberEntity;
-            console.log(dialogState);
             return await stepContext.next();
         }else{
             dialogState.numberOfPeople = stepContext.result;
@@ -107,17 +116,54 @@ class BookTable extends ComponentDialog{
         }   
     }
 
-    async confirmTableBooking(stepContext){
+    async showConfirmationCard(stepContext){
         if(stepContext.values.Entities.dateFrameObj.date){ 
             dialogState.dateOfBooking = stepContext.values.Entities.dateFrameObj.date;
         }else{
             dialogState.dateOfBooking = stepContext.result;
         }
         console.log(dialogState);
-        return stepContext.endDialog();
+        await stepContext.context.sendActivity({
+          attachments : [
+            CardFactory.adaptiveCard(confirmationCard(
+              "TB-1",
+              dialogState.numberOfPeople,
+              dialogState.dateOfBooking,
+              nanoid()
+              ))
+          ]
+        })
+      //   return await stepContext.prompt(ChoicePromptDialog,{
+      //     prompt : 'Please help me with the type of leave you want to apply for',
+      //     choices : ChoiceFactory.toChoices([
+      //         'Yes',
+      //         'No',
+      //     ])
+      // })
+      return await stepContext.prompt(ConfirmPromptDialog,
+        'Do You want to Confirm me Your Booking',
+        ['Yes','No']
+        )
+
     }
 
-
+    async finalBooking(stepContext){
+      if(stepContext.result){
+        await stepContext.context.sendActivity({
+          attachments : [
+            CardFactory.adaptiveCard(finalBookingCard(
+              "TB-1",
+              dialogState.numberOfPeople,
+              dialogState.dateOfBooking,
+              nanoid()
+              ))
+          ]
+        });
+        return await stepContext.endDialog();
+      }else{
+        return await stepContext.endDialog();
+      }
+    }
 
 }
 
