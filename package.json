@@ -15,7 +15,8 @@
     "botbuilder-ai": "^4.14.1",
     "botbuilder-dialogs": "^4.14.1",
     "nanoid": "^3.1.30",
-    "restify": "^8.6.0"
+    "restify": "^8.6.0",
+    "validator": "^13.6.0"
   },
   "devDependencies": {
     "dotenv": "^10.0.0"

@@ -12,9 +12,9 @@ const RootDialogWaterfall1 = 'RootDialogWaterfall1'
 const rootDialog = 'rootDialog'
 
 const luisConfig = {
-    applicationId: "0e14636f-d80b-4030-837e-b01158b1d5ab",
-    endpointKey: "39118401844e4e92b01b2e6843ac8c3e",
-    endpoint: "https://luistraining122.cognitiveservices.azure.com/",
+    applicationId: "424e2271-01b0-444b-839b-c076509442af",
+    endpointKey: "56a94745a1bf4cfbb01fbdb106053a33",
+    endpoint: "https://luisbottraining.cognitiveservices.azure.com/",
   };
 
 class RootDialog extends ComponentDialog{
@@ -58,7 +58,7 @@ class RootDialog extends ComponentDialog{
             // case 'show photos' : 
             // return await stepContext.beginDialog("showGallery");
 
-            default : context.sendActivity('Sorry, I am still learning can you please refresh your query')
+            default : stepContext.context.sendActivity('Sorry, I am still learning can you please refresh your query')
         } 
         console.log('here');
         return stepContext.endDialog();

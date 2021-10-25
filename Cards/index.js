@@ -331,7 +331,7 @@ module.exports = {
                     "items": [
                         {
                             "type": "Image",
-                            "url": "https://mir-s3-cdn-cf.behance.net/project_modules/fs/c8708f60921943.5a5e078bf3f74.gif"
+                            "url": "https://i.pinimg.com/originals/58/db/55/58db55e378435cfd534201238af2fc21.gif"
                         },
                         {
                             "type": "Container",
@@ -340,9 +340,9 @@ module.exports = {
                                     "type": "TextBlock",
                                     "text": "Hey, My name is RestroBot. I am a Virtual Assisting Bot. I can assist you in booking your table in our Restaurant. Please Enter you query to book your table below",
                                     "wrap": true,
-                                    "size": "Medium",
+                                    "size": "Default",
                                     "weight": "Bolder",
-                                    "color": "Warning",
+                                    "color": "Accent",
                                     "isSubtle": true
                                 }
                             ]
@@ -418,7 +418,7 @@ module.exports = {
                                             "text": "Booking ID",
                                             "wrap": true,
                                             "horizontalAlignment": "Center",
-                                            "size": "Medium",
+                                            "size": "Default",
                                             "weight": "Bolder",
                                             "color": "Dark"
                                         }
@@ -432,7 +432,7 @@ module.exports = {
                                             "type": "TextBlock",
                                             "text": `${id}`,
                                             "wrap": true,
-                                            "size": "Medium",
+                                            "size": "Default",
                                             "weight": "Lighter"
                                         }
                                     ]
@@ -454,7 +454,7 @@ module.exports = {
                                             "text": "Number of Person",
                                             "wrap": true,
                                             "horizontalAlignment": "Center",
-                                            "size": "Medium",
+                                            "size": "Default",
                                             "weight": "Bolder",
                                             "color": "Dark"
                                         }
@@ -468,7 +468,7 @@ module.exports = {
                                             "type": "TextBlock",
                                             "text": `${count}`,
                                             "wrap": true,
-                                            "size": "Medium",
+                                            "size": "Default",
                                             "weight": "Lighter"
                                         }
                                     ]
@@ -488,7 +488,7 @@ module.exports = {
                                             "text": "Booking Date",
                                             "wrap": true,
                                             "horizontalAlignment": "Center",
-                                            "size": "Medium",
+                                            "size": "Default",
                                             "weight": "Bolder",
                                             "color": "Dark"
                                         }
@@ -502,7 +502,7 @@ module.exports = {
                                             "type": "TextBlock",
                                             "text": `${date}`,
                                             "wrap": true,
-                                            "size": "Medium",
+                                            "size": "Default",
                                             "weight": "Lighter"
                                         }
                                     ]
@@ -529,7 +529,7 @@ module.exports = {
                                             "text": "Table Number",
                                             "wrap": true,
                                             "horizontalAlignment": "Center",
-                                            "size": "Medium",
+                                            "size": "Default",
                                             "weight": "Bolder",
                                             "color": "Dark"
                                         }
@@ -621,7 +621,7 @@ module.exports = {
                                             "text": "Booking ID",
                                             "wrap": true,
                                             "horizontalAlignment": "Center",
-                                            "size": "Medium",
+                                            "size": "Default",
                                             "weight": "Bolder",
                                             "color": "Dark"
                                         }
@@ -635,7 +635,7 @@ module.exports = {
                                             "type": "TextBlock",
                                             "text": `${id}`,
                                             "wrap": true,
-                                            "size": "Medium",
+                                            "size": "Default",
                                             "weight": "Lighter"
                                         }
                                     ]
@@ -657,7 +657,7 @@ module.exports = {
                                             "text": "Number of Person",
                                             "wrap": true,
                                             "horizontalAlignment": "Center",
-                                            "size": "Medium",
+                                            "size": "Default",
                                             "weight": "Bolder",
                                             "color": "Dark"
                                         }
@@ -671,7 +671,7 @@ module.exports = {
                                             "type": "TextBlock",
                                             "text": `${count}`,
                                             "wrap": true,
-                                            "size": "Medium",
+                                            "size": "Default",
                                             "weight": "Lighter"
                                         }
                                     ]
@@ -691,7 +691,7 @@ module.exports = {
                                             "text": "Booking Date",
                                             "wrap": true,
                                             "horizontalAlignment": "Center",
-                                            "size": "Medium",
+                                            "size": "Default",
                                             "weight": "Bolder",
                                             "color": "Dark"
                                         }

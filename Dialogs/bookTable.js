@@ -8,6 +8,7 @@ const {
 } = require('botbuilder-dialogs');
 const {nanoid} = require('nanoid');
 const {CardFactory} = require('botbuilder');
+// const validator = require('validators')
 
 
 const bookTable = 'bookTable'
@@ -49,7 +50,6 @@ class BookTable extends ComponentDialog{
     
             let numberEntity = stepContext.options.entities.number ? stepContext.options.entities.number[0] : null;
     
-            // let leaveTypesEntity = stepContext.options.entities.leaveTypes ? stepContext.options.entities.leaveTypes[0][0] : null;
     
             let dateTimeEntity = stepContext.options.entities.datetimeV2 ? stepContext.options.entities.datetimeV2 : null;
     
@@ -57,11 +57,6 @@ class BookTable extends ComponentDialog{
     
             if(dateTimeEntity != null){
               dateTimeEntity.forEach((subEntities, index)=>{
-                // if(subEntities.type === 'duration'){
-                //   dateFrameObj['duration'] = subEntities.values[0]['timex'].replace("P",
-                //   "").replace("D","");
-                // }
-    
                 if(subEntities.type === 'date'){
                   dateFrameObj['date'] = subEntities.values[0]["resolution"][0]["value"];
                 }
@@ -94,7 +89,6 @@ class BookTable extends ComponentDialog{
             return await stepContext.prompt(TextPromptDialog,`Fow how many people you want me to book a table for?`);
         }
         else{
-          console.log("else")
           return await stepContext.next();
         }
     }
@@ -104,16 +98,16 @@ class BookTable extends ComponentDialog{
         dialogState = await this.bookTableData.get(stepContext.context,{});
         if(stepContext.values.Entities.numberEntity){ 
             dialogState.numberOfPeople = stepContext.values.Entities.numberEntity;
-            return await stepContext.next();
         }else{
             dialogState.numberOfPeople = stepContext.result;
-            if(stepContext.values.Entities.dateFrameObj.date){
+        }  
+
+        if(stepContext.values.Entities.dateFrameObj.date){
                 return await stepContext.next();
             }else{
                 return await stepContext.prompt(TextPromptDialog,`On Which Date You want be to book a Table at ?`);
 
-            }
-        }   
+            } 
     }
 
     async showConfirmationCard(stepContext){

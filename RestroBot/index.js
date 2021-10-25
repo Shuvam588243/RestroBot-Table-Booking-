@@ -16,7 +16,7 @@ class RestroBot extends ActivityHandler{
             let membersAdded = context.activity.membersAdded;
             for(let cnt = 0; cnt < membersAdded.length; cnt ++){
                 if(membersAdded[cnt].id !== context.activity.recipient.id){
-                    await context.sendActivity(`Welcome ${membersAdded[cnt].name}`);
+                    // await context.sendActivity(`Welcome ${membersAdded[cnt].name}`);
                     await context.sendActivity({
                         attachments : [
                             CardFactory.adaptiveCard(IntroCard())
